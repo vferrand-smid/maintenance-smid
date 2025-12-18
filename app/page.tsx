@@ -147,6 +147,42 @@ export default function Home() {
                   </svg>
                 </Link>
               </div>
+              <div className="flex max-h-full">
+                <div className="flex flex-row items-center lg:mx-1 lg:gap-0.5">
+                  <Link
+                    href="https://apps.apple.com/fr/app/smartphone-id-photo-identit%C3%A9/id1527550865"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Page de téléchargement Apple Store"
+                  >
+                    <Image
+                      src={"/AppStore_icon_FR (1).svg"}
+                      alt=""
+                      width={120}
+                      height={120}
+                      priority={true}
+                      aria-hidden="true"
+                      className="m-2"
+                    />
+                  </Link>
+                  <Link
+                    href="https://play.google.com/store/apps/details?id=com.smartphoneid&hl=fr&gl=FR"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Page de téléchargement Google Store"
+                  >
+                    <Image
+                      src={"/GStore_icon_FR.svg"}
+                      alt=""
+                      width={120}
+                      height={120}
+                      priority={true}
+                      aria-hidden="true"
+                      className="m-2"
+                    />
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </div>
