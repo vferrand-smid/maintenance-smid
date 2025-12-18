@@ -44,7 +44,7 @@ export default function Home() {
         <div className="pt-[42vh] lg:pt-0" />
 
         {/* Wrapper desktop à droite */}
-        <div className="ml-auto w-full lg:flex lg:min-h-screen lg:items-center lg:w-[40%] lg:bg-[#333] px-6 py-10  2xl:w-[36%] max-w-[860px]">
+        <div className="ml-auto w-full lg:flex lg:min-h-screen  lg:items-center lg:w-[40%]  lg:bg-[#333] px-6 py-10  2xl:w-[30%] max-w-[860px]">
           <div className="w-full lg:py-10 ">
             <div className="text-white text-center mx-auto max-w-md lg:mx-0 lg:max-w-none lg:text-left lg:pl-8">
               <h1 className="text-3xl font-semibold leading-tight sm:text-4xl">
