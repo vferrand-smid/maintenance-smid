@@ -42,7 +42,7 @@ export default async function Home({
 
         {/* DESKTOP: image à gauche + fondu à droite */}
         <div className="hidden lg:block">
-          <div className="absolute inset-y-0 left-0 w-[60%] 2xl:w-[65%]">
+          <div className="absolute inset-y-0 left-0 w-[60%] 2xl:w-[55%]">
             <Image
               src={heroImage}
               alt=""
@@ -52,7 +52,11 @@ export default async function Home({
               sizes="(min-width:1024px) 60vw, 100vw"
             />
             {/* Fondu horizontal vers #333 */}
-            <div className=" pointer-events-none absolute inset-y-0 right-0 w-[240px] bg-linear-to-r from-[#333]/0 via-[#333]/70 to-[#333]" />
+            {/* <div className="pointer-events-none absolute inset-y-0 right-0 w-[440px] bg-linear-to-r from-[#333]/0 via-[#333]/50 to-[#333]" /> */}
+            <div
+              className="pointer-events-none absolute inset-y-0 right-0 w-[440px]
+             bg-[linear-gradient(to_right,rgba(51,51,51,0)_0%,rgba(51,51,51,.30)_25%,rgba(51,51,51,.6)_45%,rgba(51,51,51,1)_100%)]"
+            />
           </div>
         </div>
       </div>
@@ -63,9 +67,9 @@ export default async function Home({
         <div className="pt-[42vh] lg:pt-0" />
 
         {/* Wrapper desktop à droite */}
-        <div className="ml-auto w-full lg:flex lg:min-h-screen  lg:items-center lg:w-[40%]  lg:bg-[#333] pr-6 py-10  2xl:w-[30%] max-w-[860px]">
+        <div className=" ml-auto w-full lg:flex lg:min-h-screen  lg:items-center lg:w-[40%]  lg:bg-[#333] pr-6 py-10  2xl:w-[40%] max-w-[860px]">
           <div className="w-full lg:py-10 ">
-            <div className="text-white text-center mx-auto max-w-md lg:mx-0 lg:max-w-none lg:text-left ">
+            <div className="text-white text-center mx-auto max-w-md lg:mx-0 lg:max-w-none lg:text-left lg:pl-8">
               <h1 className="text-3xl font-semibold leading-tight sm:text-4xl">
                 {t("title")}
               </h1>
@@ -163,7 +167,7 @@ export default async function Home({
                   </div>
                 </>
               )}
-              <div className="flex max-h-full mt-8">
+              <div className="flex max-h-full mt-8 max-lg:justify-center">
                 <div className="flex flex-row items-center lg:gap-0.5">
                   <Link
                     href="https://apps.apple.com/fr/app/smartphone-id-photo-identit%C3%A9/id1527550865"
