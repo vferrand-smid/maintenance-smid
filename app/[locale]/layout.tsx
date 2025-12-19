@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import { NextIntlClientProvider } from "next-intl";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,17 +18,25 @@ export const metadata: Metadata = {
   description: "Page de maintenance - Smartphone ID",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }>) {
+  const { locale } = await params;
+  // Charge les messages JSON pour la locale exacte (ex: en-us, fr-fr)
+  const messages = (await import(`../../i18n/messages/${locale}.json`)).default;
+
   return (
-    <html lang="fr">
+    <html lang={locale}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <NextIntlClientProvider messages={messages} locale={locale}>
+          {children}
+        </NextIntlClientProvider>
       </body>
     </html>
   );
