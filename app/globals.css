@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+@layer base {
+  html {
+    font-family: "Georama", sans-serif;
+  }
+  p {
+    @apply text-base leading-relaxed text-white;
+  }
+}

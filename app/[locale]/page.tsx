@@ -63,34 +63,28 @@ export default async function Home({
         <div className="pt-[42vh] lg:pt-0" />
 
         {/* Wrapper desktop à droite */}
-        <div className="ml-auto w-full lg:flex lg:min-h-screen  lg:items-center lg:w-[40%]  lg:bg-[#333] px-6 py-10  2xl:w-[30%] max-w-[860px]">
+        <div className="ml-auto w-full lg:flex lg:min-h-screen  lg:items-center lg:w-[40%]  lg:bg-[#333] pr-6 py-10  2xl:w-[30%] max-w-[860px]">
           <div className="w-full lg:py-10 ">
-            <div className="text-white text-center mx-auto max-w-md lg:mx-0 lg:max-w-none lg:text-left lg:pl-8">
+            <div className="text-white text-center mx-auto max-w-md lg:mx-0 lg:max-w-none lg:text-left ">
               <h1 className="text-3xl font-semibold leading-tight sm:text-4xl">
                 {t("title")}
               </h1>
 
-              <p className="mt-4 max-w-xl text-base leading-relaxed text-white/85">
-                {t("p1")}
-              </p>
+              <p className="mt-4 max-w-xl">{t("p1")}</p>
 
-              <p className="mt-4 max-w-xl text-base leading-relaxed text-white/85">
-                {t("p2")}
-              </p>
+              <p className="mt-4 max-w-xl">{t("p2")}</p>
 
-              <div className="mt-6 inline-flex max-w-xl rounded-lg bg-white/10 px-5 py-4 text-sm text-white/90 backdrop-blur">
+              <div className="mt-6 inline-flex max-w-xl rounded-lg bg-white/10 px-5 py-4 backdrop-blur ">
                 <div>
-                  <p>{t("boxLine1")}</p>
-                  <p>{t("boxLine2")}</p>
+                  <p className="font-semibold">{t("boxLine1")}</p>
+                  <p className="font-semibold">{t("boxLine2")}</p>
                 </div>
               </div>
 
               {isFrance && (
                 <>
                   {socialTitle && (
-                    <p className="mt-8 text-sm font-semibold text-white/90">
-                      {socialTitle}
-                    </p>
+                    <p className="mt-8 font-semibold ">{socialTitle}</p>
                   )}
 
                   <div className="mt-4 flex flex-wrap items-center gap-3 justify-center lg:justify-start">
@@ -170,7 +164,7 @@ export default async function Home({
                 </>
               )}
               <div className="flex max-h-full mt-8">
-                <div className="flex flex-row items-center lg:mx-1 lg:gap-0.5">
+                <div className="flex flex-row items-center lg:gap-0.5">
                   <Link
                     href="https://apps.apple.com/fr/app/smartphone-id-photo-identit%C3%A9/id1527550865"
                     target="_blank"
@@ -184,7 +178,7 @@ export default async function Home({
                       height={120}
                       priority={true}
                       aria-hidden="true"
-                      className="m-2"
+                      className=""
                     />
                   </Link>
                   <Link
