@@ -5,6 +5,6 @@
     font-family: "Georama", sans-serif;
   }
   p {
-    @apply text-base leading-relaxed text-white;
+    @apply text-base leading-relaxed text-white text-balance;
   }
 }
