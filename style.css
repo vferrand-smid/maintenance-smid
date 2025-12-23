@@ -1,0 +1,289 @@
+:root {
+  --bg: #333;
+  --text: #fff;
+  --muted: rgba(255, 255, 255, 0.85);
+  --card: rgba(255, 255, 255, 0.1);
+  --maxw: 860px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Georama", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+/* =========================
+   BACKGROUND (fixed layer)
+========================= */
+.bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+/* Mobile: image top (42vh) */
+.bg__mobile {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 42vh;
+  width: 100%;
+  background-image: url("public/mockup_fr_screen_lounge-1.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+.bg__mobile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(51, 51, 51, 0) 0%,
+    rgba(51, 51, 51, 0.2) 55%,
+    rgba(51, 51, 51, 1) 100%
+  );
+}
+
+/* Desktop: image left (60% / 55%) + fade */
+.bg__desktop {
+  display: none;
+  position: absolute;
+  inset: 0;
+}
+
+.bg__desktop-left {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 60%;
+  background-image: url("public/mockup_fr_screen_lounge-1.webp");
+  background-size: cover;
+  background-position: 30% center;
+}
+
+.bg__desktop-left::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: 440px;
+  pointer-events: none;
+  background: linear-gradient(
+    to right,
+    rgba(51, 51, 51, 0) 0%,
+    rgba(51, 51, 51, 0.3) 25%,
+    rgba(51, 51, 51, 0.6) 45%,
+    rgba(51, 51, 51, 1) 100%
+  );
+}
+
+/* =========================
+   CONTENT (scrollable)
+========================= */
+main {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh; /* IMPORTANT: pas de height fixe */
+  width: 100%;
+  overflow: visible; /* IMPORTANT: laisser scroller */
+}
+
+.container {
+  position: relative;
+  margin: 0 auto;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 1200px; /* proche de max-xl:max-w-6xl */
+  padding: 40px 24px; /* px-6 py-10 */
+}
+
+/* Réserve la place de l'image en mobile => le texte ne passe JAMAIS dessus */
+.spacer {
+  height: 42vh; /* équivalent à pt-[42vh] */
+}
+
+/* Wrapper "à droite" (en mobile: juste le bloc contenu) */
+.right {
+  width: 100%;
+  padding: 40px 0; /* proche de py-10 */
+  display: flex;
+  justify-content: center;
+}
+
+/* Bloc texte */
+.panel {
+  width: 100%;
+  max-width: 448px; /* max-w-md */
+  margin: 0 auto;
+  text-align: center;
+  color: var(--text);
+}
+
+h1 {
+  margin: 0;
+  font-weight: 600; /* font-semibold */
+  line-height: 1.2; /* leading-tight */
+  font-size: 32px; /* text-3xl */
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+p {
+  margin: 16px auto 0; /* mt-4 */
+  max-width: 36rem; /* max-w-xl */
+  line-height: 1.65;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* Callout */
+.callout {
+  margin: 24px auto 0; /* mt-6 */
+  display: inline-flex;
+  max-width: 36rem; /* max-w-xl */
+  border-radius: 12px; /* rounded-lg */
+  background: rgba(255, 255, 255, 0.1); /* bg-white/10 */
+  padding: 16px 20px; /* px-5 py-4 */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  text-align: left;
+}
+
+.callout strong {
+  display: block;
+  font-weight: 600;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+/* Social */
+.social {
+  margin-top: 32px; /* mt-8 */
+}
+
+.social-title {
+  margin: 0;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text);
+}
+
+.social-links {
+  margin-top: 16px; /* mt-4 */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px; /* gap-3 */
+  justify-content: center;
+}
+
+.social-links a {
+  display: inline-flex;
+  width: 44px;
+  height: 44px;
+  border-radius: 9999px;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.social-links svg {
+  display: block;
+}
+
+/* Stores (badges) */
+.store-wrap {
+  margin-top: 32px; /* mt-8 */
+  display: flex;
+  justify-content: center; /* max-lg:justify-center */
+}
+
+.store-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px; /* proche de lg:gap-0.5 */
+}
+
+.store-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.store-links img {
+  height: 44px;
+  width: auto;
+  display: block;
+}
+
+/* =========================
+   DESKTOP (>=1024px)
+========================= */
+@media (min-width: 1024px) {
+  .bg__mobile {
+    display: none;
+  }
+  .bg__desktop {
+    display: block;
+  }
+
+  /* plus besoin de réserver la place */
+  .spacer {
+    height: 0;
+  }
+
+  .container {
+    min-height: 100vh;
+    padding: 40px 24px; /* px-6 py-10 */
+  }
+
+  .right {
+    margin-left: auto;
+    width: 40%;
+    max-width: var(--maxw); /* max-w-[860px] */
+    min-height: 100vh;
+    display: flex;
+    align-items: center; /* lg:items-center */
+    justify-content: flex-start;
+    padding: 40px 24px 40px 0; /* lg:pr-6 + py-10 */
+  }
+
+  .panel {
+    max-width: none; /* lg:max-w-none */
+    margin: 0;
+    text-align: left; /* lg:text-left */
+    padding-left: 32px; /* lg:pl-8 */
+  }
+
+  h1 {
+    font-size: 36px; /* proche de sm:text-4xl */
+  }
+
+  .social-links {
+    justify-content: flex-start; /* lg:justify-start */
+  }
+
+  .store-wrap {
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width: 1536px) {
+  .bg__desktop-left {
+    width: 55%;
+  }
+}
